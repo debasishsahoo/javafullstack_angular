@@ -1,0 +1,71 @@
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+.metadata/*.*
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+.settings/
+
+### Gradle ###
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+gradle-app.properties
+gradlew
+gradlew.bat
+
+### Spring Boot ###
+*.log
+spring.log
+
+### Logs ###
+*.log
+logs/
+log/
+
+### OS generated ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+### IDEs ###
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+### Environment files ###
+.env
+.env.*
+
+### Others ###
+*.tmp
+*.swp
+*.bak
+*.orig
+*.rej
