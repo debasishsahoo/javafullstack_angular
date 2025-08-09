@@ -9,9 +9,10 @@ public class UserManager {
 		// Using var (Java 10+)
 		var userList = new ArrayList<String>(); // Inferred as ArrayList<String>
 		
+		userList.add("");
 		userList.add("Alice");
 		userList.add("Bob");
-		userList.add("");
+		
 		// Process users
 		int activeUsers = processUsers(userList);
 		System.out.println("Active: " + activeUsers + "/" + userList.size());
@@ -20,7 +21,7 @@ public class UserManager {
 	private static int processUsers(List<String> users) {
 		int count = 0;            // Local variable
 		
-		for (var user : users){ // Type inference in loop
+		for (var user : users){    // Type inference in loop
 			if (!user.isBlank())
 				count++;
 		}
