@@ -85,6 +85,8 @@ public class Calculator1 {
 					System.out.println("Error: Modulus by zero is not allowed!");
 				}
 				break;
+			default:
+                System.out.println("Invalid choice! Please try again.");
 			}
 			// Ask if user wants to perform another calculation
 			System.out.print("\nDo you want to perform another calculation? (Y/N): ");
