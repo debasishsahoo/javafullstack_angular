@@ -21,6 +21,8 @@ public class ExplicitCasting_Narrowing {
 		System.out.println("Cast to int: " + intValue);
 		System.out.println("Cast to short: " + shortValue);
 		System.out.println("Cast to byte: " + byteValue);
+		
+		
 
 		// 2. DATA LOSS DEMONSTRATION
 		System.out.println("\n2. Data Loss Examples:");
@@ -30,6 +32,7 @@ public class ExplicitCasting_Narrowing {
 		int truncated = (int) decimal;
 		System.out.println("double 99.99 -> int: " + truncated + " (decimal lost)");
 
+		
 		// Overflow example
 		int largeInt = 300;
 		byte overflowed = (byte) largeInt;
@@ -41,6 +44,13 @@ public class ExplicitCasting_Narrowing {
 		System.out.println("long: " + preciseLong);
 		System.out.println("float: " + lessPrec + " (precision lost)");
 
+		
+		
+		
+		
+		
+		
+		
 		// 3. CHARACTER CONVERSIONS
 		System.out.println("\n3. Character Conversions:");
 
@@ -48,10 +58,13 @@ public class ExplicitCasting_Narrowing {
 		char character = (char) ascii; // int to char
 		System.out.println("int 65 -> char: '" + character + "'");
 
+		
 		int unicodeValue = 8364; // Euro symbol
 		char euroSymbol = (char) unicodeValue;
 		System.out.println("int 8364 -> char: '" + euroSymbol + "'");
 
+		
+		
 		// 4. OBJECT CASTING (DOWNCASTING)
 		System.out.println("\n4. Object Downcasting:");
 		demonstrateObjectCasting();
