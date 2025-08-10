@@ -31,7 +31,7 @@ public class EnhancedCalculator {
 			case 1:
 				performBasicArithmetic(scanner);
 				break;
-				
+
 			case 2:
 				performPowerCalculation(scanner);
 				break;
@@ -45,13 +45,12 @@ public class EnhancedCalculator {
 				performNumberTypeConversion(scanner);
 				break;
 			case 6:
-                running = false;
-                System.out.println("Thank you for using the Enhanced Calculator!");
-                break;
+				running = false;
+				System.out.println("Thank you for using the Enhanced Calculator!");
+				break;
 			default:
-                System.out.println("Invalid choice! Please try again.");
+				System.out.println("Invalid choice! Please try again.");
 			}
-			
 
 		}
 
@@ -59,7 +58,35 @@ public class EnhancedCalculator {
 	}
 
 	private static void performBasicArithmetic(Scanner scanner) {
+		System.out.println("\n--- Basic Arithmetic ---");
+
+		System.out.print("Enter first number: ");
+		double num1 = scanner.nextDouble();
+
+		System.out.print("Enter second number: ");
+		double num2 = scanner.nextDouble();
+
+		System.out.println("Results:");
+
+		System.out.println("Addition: " + num1 + " + " + num2 + " = " + (num1 + num2));
+		System.out.println("Subtraction: " + num1 + " - " + num2 + " = " + (num1 - num2));
+		System.out.println("Multiplication: " + num1 + " * " + num2 + " = " + (num1 * num2));
+
+		// Division with error handling
+		if (num2 != 0) {
+			System.out.println("Division: " + num1 + " / " + num2 + " = " + (num1 / num2));
+			System.out.println("Modulus: " + num1 + " % " + num2 + " = " + (num1 % num2));
+
+			// Demonstrate type casting
+			System.out.println("\nType Casting Examples:");
+			System.out.println("Double to Int: " + (int) (num1 / num2));
+			System.out.println("Double to Long: " + (long) (num1 / num2));
+		} else {
+			System.out.println("Division & Modulus: Cannot divide by zero!");
+		}
 	}
+
+	
 
 	private static void performPowerCalculation(Scanner scanner) {
 	}
