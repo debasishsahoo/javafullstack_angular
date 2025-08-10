@@ -60,10 +60,10 @@ public class EnhancedCalculator {
 	private static void performBasicArithmetic(Scanner scanner) {
 		System.out.println("\n--- Basic Arithmetic ---");
 
-		System.out.print("Enter first number: ");
+		System.out.print("Enter first number:");
 		double num1 = scanner.nextDouble();
 
-		System.out.print("Enter second number: ");
+		System.out.print("Enter second number:");
 		double num2 = scanner.nextDouble();
 
 		System.out.println("Results:");
@@ -89,6 +89,34 @@ public class EnhancedCalculator {
 	
 
 	private static void performPowerCalculation(Scanner scanner) {
+		System.out.println("\n--- Power Calculation ---");
+		
+        System.out.print("Enter the base number: ");
+        double base = scanner.nextDouble();
+        
+        System.out.print("Enter the exponent: ");
+        int exponent = scanner.nextInt();
+        
+        
+        // Calculate power using Math class
+        double result = Math.pow(base, exponent);
+        System.out.println(base + " raised to the power of " + exponent + " = " + result);
+        
+        
+        
+        // Manual calculation for demonstration
+        double manualResult = 1;
+        for (int i = 0; i < Math.abs(exponent); i++) {
+            manualResult *= base;
+        }
+
+        if (exponent < 0) {
+            manualResult = 1 / manualResult;
+        }
+
+        System.out.println("Calculated manually: " + manualResult);
+          
+
 	}
 
 	private static void performSquareRootCalculation(Scanner scanner) {
