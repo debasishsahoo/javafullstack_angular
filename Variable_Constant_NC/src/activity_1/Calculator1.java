@@ -53,44 +53,47 @@ public class Calculator1 {
 				result = num1 + num2;
 				System.out.println(num1 + " + " + num2 + " = " + result);
 				break;
-				
+
 			case 2: // Subtraction
 				result = num1 - num2;
 				System.out.println(num1 + " - " + num2 + " = " + result);
-				break;	
-				
+				break;
+
 			case 3: // Multiplication
 				result = num1 * num2;
 				System.out.println(num1 + " * " + num2 + " = " + result);
 				break;
-				
+
 			case 4: // Division
 				if (num2 != 0) {
 					result = num1 / num2;
 					System.out.println(num1 + " / " + num2 + " = " + result);
-					
+
 					// Demonstrate type casting
-                    int intResult = (int) result;
-                    System.out.println("Integer result (after casting): " + intResult);
-				}
-				else {
+					int intResult = (int) result;
+					System.out.println("Integer result (after casting): " + intResult);
+				} else {
 					System.out.println("Error: Division by zero is not allowed!");
 				}
-				break;		
-				
+				break;
+
 			case 5: // Modulus
 				if (num2 != 0) {
 					result = num1 % num2;
 					System.out.println(num1 + " % " + num2 + " = " + result);
-				}
-				else {
+				} else {
 					System.out.println("Error: Modulus by zero is not allowed!");
 				}
 				break;
 			}
+			// Ask if user wants to perform another calculation
+			System.out.print("\nDo you want to perform another calculation? (Y/N): ");
+			continueChar = scanner.next().charAt(0);
+			running = (continueChar == 'Y' || continueChar == 'y');
 
 		}
 
+		scanner.close();
 	}
 
 }
