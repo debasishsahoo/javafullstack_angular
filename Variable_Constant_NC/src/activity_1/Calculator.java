@@ -2,7 +2,7 @@ package activity_1;
 
 import java.util.Scanner; //For User Input
 
-public class Calculator1 {
+public class Calculator {
 	// Constants
 	private static final String WELCOME_MESSAGE = "Welcome to the Java Calculator";
 	private static final String MENU = "\nPlease select an operation:" + "\n1. Addition" + "\n2. Subtraction"

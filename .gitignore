@@ -69,3 +69,4 @@ bin/
 *.bak
 *.orig
 *.rej
+/.metadata/

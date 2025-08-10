@@ -146,12 +146,12 @@ public class EnhancedCalculator {
 
 		// Shift operations
 		System.out.println("\nShift operations on " + num1 + ":");
-		System.out.println("Left shift by 1: " + num1 + " << 1 = " + (num1 << 1) + " (Binary: "
-				+ Integer.toBinaryString(num1 << 1) + ")");
-		System.out.println("Right shift by 1: " + num1 + " >> 1 = " + (num1 >> 1) + " (Binary: "
-				+ Integer.toBinaryString(num1 >> 1) + ")");
-		System.out.println("Unsigned right shift by 1: " + num1 + " >>> 1 = " + (num1 >>> 1) + " (Binary: "
-				+ Integer.toBinaryString(num1 >>> 1) + ")");
+		
+		System.out.println("Left shift by 1: " + num1 + " << 1 = " + (num1 << 1) + " (Binary: " + Integer.toBinaryString(num1 << 1) + ")");
+		
+		System.out.println("Right shift by 1: " + num1 + " >> 1 = " + (num1 >> 1) + " (Binary: " + Integer.toBinaryString(num1 >> 1) + ")");
+		
+		System.out.println("Unsigned right shift by 1: " + num1 + " >>> 1 = " + (num1 >>> 1) + " (Binary: " + Integer.toBinaryString(num1 >>> 1) + ")");
 	}
 
 	private static void performNumberTypeConversion(Scanner scanner) {
