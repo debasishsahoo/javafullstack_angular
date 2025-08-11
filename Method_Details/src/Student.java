@@ -71,8 +71,6 @@ public class Student {
 		this.age = age;
 	}
 
-	
-	
 	// 4. PRIVATE HELPER METHODS
 	private void validateName(String name) {
 		if (name == null || name.trim().isEmpty()) {
@@ -84,15 +82,69 @@ public class Student {
 	}
 
 	
+	// 5. INSTANCE METHODS WITH DIFFERENT RETURN TYPES
+	
+	// Void method (Return Nothing)
+	public void displayInfo() {
+        System.out.println("=== Student Information ===");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Average Grade: " + calculateAverage());
+        System.out.println("Grade: " + getLetterGrade());
+        System.out.println("========================");
+    }
+	
+	// Method returning primitive type
+	public double calculateAverage(){
+		if(grades==null || grades.length==0 )return 0.0;
+		
+		double sum=0;
+		int count=0;
+		for(double grade:grades) {
+			if(grade>0) {
+				sum +=grade;
+				count++;
+			}
+		}
+		return count > 0 ? sum / count : 0.0;
+		
+		
+		
+		
+		
+	}
+	
+	
+	// Method returning String
+	public String getLetterGrade() {
+        double avg = calculateAverage();
+        if (avg >= 90) return "A";
+        else if (avg >= 80) return "B";
+        else if (avg >= 70) return "C";
+        else if (avg >= 60) return "D";
+        else return "F";
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
 	
 	
 	public static void main(String[] args) {
-		Student stuObj1 = new Student();
-		Student stuObj2 = new Student("Deb", 34);
-
+		Student stuObj1 = new Student();   //Instance One- stuObj1
+		
+		Student stuObj2 = new Student("Deb", 34);  //Instance Two-stuObj2 
+ 
 	}
 
 }
