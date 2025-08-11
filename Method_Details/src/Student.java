@@ -207,25 +207,23 @@ public class Student {
             return Integer.hashCode(id);
         }
         
+     // 9. METHOD RETURNING ARRAY
+        public String[] getGradeReport() {
+            String[] report = new String[grades.length + 2];
+      
+            report[0] = "Grade Report for: " + name;
+            
+            for (int i = 0; i < grades.length; i++) {
+                if (grades[i] > 0) {
+                    report[i + 1] = "Grade " + (i + 1) + ": " + grades[i];
+                } else {
+                    report[i + 1] = "Grade " + (i + 1) + ": Not recorded";
+                }
+            }
+            
+            report[report.length - 1] = "Average: " + String.format("%.2f", calculateAverage());
+            return report;
+        }
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	public static void main(String[] args) {
-		Student stuObj1 = new Student(); // Instance One- stuObj1
-
-		Student stuObj2 = new Student("Deb", 34); // Instance Two-stuObj2
-
-	}
 
 }
