@@ -151,13 +151,62 @@ public class Student {
         }
     }
 	
+	// Multiple parameters
+	public void updateGrade(int index, double newGrade) {
+        if (index < 0 || index >= grades.length) {
+            throw new IndexOutOfBoundsException("Invalid grade index: " + index);
+        }
+        validateGrade(newGrade);
+        double oldGrade = grades[index];
+        grades[index] = newGrade;
+        System.out.println("Grade updated from " + oldGrade + " to " + newGrade);
+    }
 	
 	
+	// 7. STATIC METHODS
+    public static int getTotalStudents() {
+        return totalStudents;
+    }
+    
+    public static void resetStudentCounter() {
+        totalStudents = 0;
+        System.out.println("Student counter reset to 0");
+    }
+    
+    // Static method with parameters
+    public static Student createHonorStudent(String name, int age) {
+        Student student = new Student(name, age);
+        // Add high grades for honor student
+        student.addGrade(95.0);
+        student.addGrade(98.0);
+        student.addGrade(92.0);
+        System.out.println("Honor student created: " + name);
+        return student;
+    }
 	
-	
-	
-	
-	
+    
+        // 8. OVERRIDDEN METHODS(Change the Default Nature)
+        @Override
+		public String toString() {
+		    return String.format("Student[ID=%d, Name=%s, Age=%d, Average=%.2f]", 
+		                       id, name, age, calculateAverage());
+		}
+        
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            
+            if (obj == null || getClass() != obj.getClass()) return false;
+            
+            Student student = (Student) obj;
+            return id == student.id;
+        }
+        
+        @Override
+        public int hashCode() {
+            return Integer.hashCode(id);
+        }
+        
 	
 	
 	
