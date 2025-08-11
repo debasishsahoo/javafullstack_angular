@@ -81,49 +81,74 @@ public class Student {
 		}
 	}
 
-	
 	// 5. INSTANCE METHODS WITH DIFFERENT RETURN TYPES
-	
+
 	// Void method (Return Nothing)
 	public void displayInfo() {
-        System.out.println("=== Student Information ===");
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Average Grade: " + calculateAverage());
-        System.out.println("Grade: " + getLetterGrade());
-        System.out.println("========================");
-    }
-	
+		System.out.println("=== Student Information ===");
+		System.out.println("ID: " + id);
+		System.out.println("Name: " + name);
+		System.out.println("Age: " + age);
+		System.out.println("Average Grade: " + calculateAverage());
+		System.out.println("Grade: " + getLetterGrade());
+		System.out.println("========================");
+	}
+
 	// Method returning primitive type
-	public double calculateAverage(){
-		if(grades==null || grades.length==0 )return 0.0;
-		
-		double sum=0;
-		int count=0;
-		for(double grade:grades) {
-			if(grade>0) {
-				sum +=grade;
+	public double calculateAverage() {
+		if (grades == null || grades.length == 0)
+			return 0.0;
+		double sum = 0;
+		int count = 0;
+		for (double grade : grades) {
+			if (grade > 0) {
+				sum += grade;
 				count++;
 			}
 		}
 		return count > 0 ? sum / count : 0.0;
-		
-		
-		
-		
-		
 	}
-	
-	
+
+	// Method returning boolean
+	public boolean isPassing() {
+		return calculateAverage() >= 60.0;
+	}
+
 	// Method returning String
 	public String getLetterGrade() {
-        double avg = calculateAverage();
-        if (avg >= 90) return "A";
-        else if (avg >= 80) return "B";
-        else if (avg >= 70) return "C";
-        else if (avg >= 60) return "D";
-        else return "F";
+		double avg = calculateAverage();
+		if (avg >= 90)
+			return "A";
+		else if (avg >= 80)
+			return "B";
+		else if (avg >= 70)
+			return "C";
+		else if (avg >= 60)
+			return "D";
+		else
+			return "F";
+	}
+
+	// 6. METHOD WITH PARAMETERS
+	   // Single parameter
+	public void addGrade(double grade) {
+        validateGrade(grade);
+        
+        // Find first empty slot
+        for (int i = 0; i < grades.length; i++) {
+            if (grades[i] == 0) {
+                grades[i] = grade;
+                System.out.println("Grade " + grade + " added for " + name);
+                return;
+            }
+        }
+        System.out.println("Cannot add grade - all slots filled");
+    }
+	
+	private void validateGrade(double grade) {
+        if (grade < 0 || grade > 100) {
+            throw new IllegalArgumentException("Grade must be between 0 and 100");
+        }
     }
 	
 	
@@ -140,11 +165,18 @@ public class Student {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+
 	public static void main(String[] args) {
-		Student stuObj1 = new Student();   //Instance One- stuObj1
-		
-		Student stuObj2 = new Student("Deb", 34);  //Instance Two-stuObj2 
- 
+		Student stuObj1 = new Student(); // Instance One- stuObj1
+
+		Student stuObj2 = new Student("Deb", 34); // Instance Two-stuObj2
+
 	}
 
 }
