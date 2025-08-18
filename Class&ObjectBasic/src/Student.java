@@ -162,4 +162,49 @@ public class Student {
 		}
 	}
 
+	// STATIC METHODS (Class methods)
+	// Belong to the class, not to any specific instance
+	public static int getTotalStudents() {
+		return totalStudents;
+	}
+
+	public static String getUniversityName() {
+		return UNIVERSITY;
+	}
+
+	public static void displayUniversityInfo() {
+		System.out.println("University: " + UNIVERSITY);
+		System.out.println("Total Students: " + totalStudents);
+	}
+
+	// Compare two students by GPA
+	public static Student getBetterStudent(Student s1, Student s2) {
+		if (s1.gpa > s2.gpa) {
+			return s1;
+		} else if (s2.gpa > s1.gpa) {
+			return s2;
+		} else {
+			return null; // Equal GPA
+		}
+	}
+	
+	
+	
+
+	// OVERRIDDEN METHODS
+	// Override Object class methods
+	@Override
+	public String toString() {
+		return "Student{" + "name='" + name + '\'' + ", age=" + age + ", studentId='" + studentId + '\'' + ", gpa="
+				+ gpa + ", courses=" + courseCount + '}';
+	}
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        
+        Student student = (Student) obj;
+        return studentId.equals(student.studentId);
+    }
+
 }
