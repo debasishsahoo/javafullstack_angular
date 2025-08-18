@@ -100,8 +100,6 @@ public class Student {
 			System.out.println("Invalid GPA. GPA must be between 0.0 and 4.0");
 		}
 	}
-	
-	
 
 	// BEHAVIOR METHODS (Instance methods)
 	// Define what a Student object can DO
@@ -112,6 +110,55 @@ public class Student {
 			System.out.println(name + " enrolled in " + courseName);
 		} else {
 			System.out.println("Cannot enroll. Maximum course limit reached.");
+		}
+	}
+
+	public void dropCourse(String courseName) {
+		for (int i = 0; i < courseCount; i++) {
+			if (courses[i].equals(courseName)) {
+				// Shift all elements left to fill the gap
+				for (int j = i; j < courseCount - 1; j++) {
+					courses[j] = courses[j + 1];
+				}
+				courses[courseCount - 1] = null; // Clear last element
+				courseCount--;
+				System.out.println(name + " dropped " + courseName);
+				return;
+			}
+		}
+		System.out.println(name + " is not enrolled in " + courseName);
+	}
+
+	public void displayStudentInfo() {
+		System.out.println("\n=== Student Information ===");
+		System.out.println("Name: " + name);
+		System.out.println("Age: " + age);
+		System.out.println("Student ID: " + studentId);
+		System.out.println("GPA: " + gpa);
+		System.out.println("University: " + UNIVERSITY);
+		System.out.println("Enrolled Courses (" + courseCount + "):");
+
+		if (courseCount == 0) {
+			System.out.println("  No courses enrolled");
+		} else {
+			for (int i = 0; i < courseCount; i++) {
+				System.out.println("  - " + courses[i]);
+			}
+		}
+		System.out.println("========================\n");
+	}
+
+	public boolean isHonorStudent() {
+		return gpa >= 3.5;
+	}
+
+	public void study(String subject, int hours) {
+		System.out.println(name + " studied " + subject + " for " + hours + " hours");
+		// Simulate GPA improvement
+		if (hours > 0) {
+			double improvement = hours * 0.01; // 0.01 GPA per hour
+			double newGpa = Math.min(4.0, gpa + improvement);
+			setGpa(newGpa);
 		}
 	}
 

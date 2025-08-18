@@ -23,7 +23,6 @@ public class StudentDemo {
         Student student3 = new Student("Bob Smith",22, "STU001", 3.8);
         
         
-        
         System.out.println("\n2. Object State and Behavior:");
         System.out.println("--------------------------------");
         
@@ -37,9 +36,11 @@ public class StudentDemo {
         student1.enrollInCourse("Java Programming");
         student1.enrollInCourse("Data Structures");
         
+        
         student2.enrollInCourse("Calculus");
         student2.enrollInCourse("Physics");
         student2.setGpa(3.7);
+        
         
         student3.enrollInCourse("Advanced Java");
         student3.study("Java", 5);
