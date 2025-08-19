@@ -22,3 +22,7 @@ public class MethodArguments {
         printer.print(doc); // Printer interacts with Document
     }
 }
+
+//Document object is passed to Printer object for printing.
+
+//Object interaction happens via method arguments.
