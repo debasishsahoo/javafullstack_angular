@@ -17,6 +17,21 @@ public class Student {
 	private static int totalStudents = 0; // Keeps track of total students
 	private static final String UNIVERSITY = "Tech University"; // Constant
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// 2. Constructor
 	// DEFAULT CONSTRUCTOR
 	// Called when object is created without parameters: new Student()

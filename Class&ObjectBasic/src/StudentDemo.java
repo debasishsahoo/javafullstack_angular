@@ -206,6 +206,13 @@ public class StudentDemo {
 		System.out.println("------------------------------------------");
 		// Static methods belong to the class, not individual objects
 		Student.displayUniversityInfo();
+		
+		
+		
+		
+		
+		
+		
 
 		System.out.println("\n6. Object Uniqueness:");
 		System.out.println("----------------------");
@@ -213,6 +220,9 @@ public class StudentDemo {
 		System.out.println("student1 == student2: " + (student1 == student2));
 		System.out.println("student1.equals(student2): " + student1.equals(student2));
 
+		
+		
+		
 		System.out.println("\n7. Object String Representation:");
 		System.out.println("----------------------------------");
 
