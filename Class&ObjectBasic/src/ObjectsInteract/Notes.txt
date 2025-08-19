@@ -1,0 +1,11 @@
+
+
+Objects communicate via methods — this is like sending messages.
+Relationships matter:
+              Association: Objects know about each other.
+
+              Aggregation: Objects are loosely connected.
+
+              Composition: Objects are tightly connected (has-a).
+              
+Object interaction makes code modular, reusable, and closer to real-world modeling
