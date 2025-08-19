@@ -212,7 +212,6 @@ public class StudentDemo {
 		
 		
 		
-		
 
 		System.out.println("\n6. Object Uniqueness:");
 		System.out.println("----------------------");
@@ -225,10 +224,14 @@ public class StudentDemo {
 		
 		System.out.println("\n7. Object String Representation:");
 		System.out.println("----------------------------------");
-
+		System.out.println("className@hashCode");
 		System.out.println("student1: " + student1.toString());
 		System.out.println("student2: " + student2.toString());
 		System.out.println("student3: " + student3.toString());
+		
+		
+		
+		
 
 		System.out.println("\n8. Memory and Object References:");
 		System.out.println("----------------------------------");
@@ -241,6 +244,15 @@ public class StudentDemo {
 		student1Ref.setGpa(3.9);
 		System.out.println("student1 GPA after modification through reference: " + student1.getGpa());
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		System.out.println("\n=== KEY CONCEPTS SUMMARY ===");
 		System.out.println("• CLASS: Blueprint/Template (Student class)");
 		System.out.println("• OBJECT: Actual instance with memory (student1, student2, student3)");
