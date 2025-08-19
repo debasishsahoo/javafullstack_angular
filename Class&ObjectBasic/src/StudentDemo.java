@@ -37,6 +37,7 @@ public class StudentDemo {
 		// ...but only enough to hold an address (not the whole object).
 
 		Student student0; // Null
+		
 
 		//System.out.println("student0:"+student0);
 		
@@ -61,7 +62,6 @@ public class StudentDemo {
 		 * class Student { 
 		 * String name; // reference (memory for storing an address) 
 		 * int age; // 4 bytes typically }
-		 * 
 		 * 
 		 * new Student();
 		 * 
@@ -118,12 +118,10 @@ public class StudentDemo {
 		
 		
 		// Student student1; → Only declares the reference (no object yet).
-		
 		// new Student(); → Creates an object but without a reference, it’s eligible for garbage collection.
-		
-		
-		
-		
+		// Student student1 = new Student(); → Combines declaration, instantiation, and assignment.
+		//Every object created with new goes into heap memory.
+		//The variable (student1) is just a pointer/reference.
 		
 		
 		
@@ -133,39 +131,77 @@ public class StudentDemo {
 		Student student2 = new Student("Alice Johnson", 20);
 		// Using overloaded constructor
 		Student student3 = new Student("Bob Smith", 22, "STU001", 3.8);
-
+		
+		
+		
+		
+		
+        //object represents its data or attributes at a given point in time
+		//These are usually stored in instance variables (fields) of the class.
+		//Defined by: Fields (variables) of the class.
+		//Represents: Current values of the object.
+		//Changes: The state can change during the lifetime of the object using methods.
+		
 		System.out.println("\n2. Object State and Behavior:");
 		System.out.println("--------------------------------");
+		
+		
 		// Each object maintains its own state (data)
 		student1.setName("Charlie Brown");
 		student1.setAge(19);
 		student1.setGpa(3.2);
+		
 		// Objects can perform behaviors (methods)
 		student1.enrollInCourse("Java Programming");
 		student1.enrollInCourse("Data Structures");
+		
+		
 		student2.enrollInCourse("Calculus");
 		student2.enrollInCourse("Physics");
 		student2.setGpa(3.7);
+		
+		
 		student3.enrollInCourse("Advanced Java");
 		student3.study("Java", 5);
 
+		
+		
 		System.out.println("\n3. Individual Object Information:");
 		System.out.println("-----------------------------------");
 		// Each object has its own unique state
 		student1.displayStudentInfo();
 		student2.displayStudentInfo();
 		student3.displayStudentInfo();
-
+		
+		
+		//Object interaction occurs when one object uses another object to perform a task.
+		  //By calling methods of another object.
+		  //By passing objects as arguments to methods.
+		  //By returning objects from methods.
+		  //By holding references to other objects as fields.
+	
+	
 		System.out.println("\n4. Object Interactions:");
 		System.out.println("------------------------");
 		// Objects can interact with each other
-		Student betterStudent = Student.getBetterStudent(student2, student3);
+		Student betterStudent = Student.getBetterStudent(student2, student3);//Object Passing 
 		if (betterStudent != null) {
 			System.out.println("Better student: " + betterStudent.getName() + " (GPA: " + betterStudent.getGpa() + ")");
 		} else {
 			System.out.println("Both students have equal GPA");
 		}
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		System.out.println("\n5. Static (Class-level) vs Instance data:");
 		System.out.println("------------------------------------------");
 		// Static methods belong to the class, not individual objects
