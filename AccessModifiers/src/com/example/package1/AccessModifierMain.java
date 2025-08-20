@@ -42,6 +42,11 @@ public class AccessModifierMain {
 		
 		
 		
+		// 5. Comprehensive demonstration
+        System.out.println("\n5. COMPREHENSIVE ACCESS:");
+        AccessModifierDemo demo = new AccessModifierDemo();
+        demo.demonstrateInternalAccess();
+		
 		
 
 	}
