@@ -41,7 +41,6 @@ public class AccessModifierMain {
 		PrivateExample.accessPrivateStaticMembers();
 		
 		
-		
 		// 5. Comprehensive demonstration
         System.out.println("\n5. COMPREHENSIVE ACCESS:");
         AccessModifierDemo demo = new AccessModifierDemo();
