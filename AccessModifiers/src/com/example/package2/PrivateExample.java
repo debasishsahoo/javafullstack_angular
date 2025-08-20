@@ -1,3 +1,4 @@
+package com.example.package2;
 
 public class PrivateExample {
 	private String privateField = "I am private";

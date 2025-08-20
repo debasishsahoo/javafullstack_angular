@@ -1,5 +1,7 @@
 package com.example.package1;
 
+import com.example.package2.*;
+
 public class AccessModifierMain {
 	public static void main(String[] args) {
 		System.out.println("=== ACCESS MODIFIERS DEMONSTRATION ===\n");
@@ -10,6 +12,30 @@ public class AccessModifierMain {
 		System.out.println(publicObj.publicField);
 		publicObj.publicMethod();
 		PublicClass.publicStaticMethod();
+		
+		// 2. Protected access demonstration (same package)
+		System.out.println("\n2. PROTECTED ACCESS (Same Package):");
+        ProtectedParent protectedObj = new ProtectedParent();
+        protectedObj.accessProtectedMembers();
+        
+        ProtectedSamePackage samePackageObj = new ProtectedSamePackage();
+        samePackageObj.accessProtected();
+        
+         // 3. Default access demonstration
+        System.out.println("\n3. DEFAULT ACCESS (Package-Private):");
+        DefaultClass defaultObj = new DefaultClass();
+        defaultObj.accessDefaultMembers();
+        
+        DefaultAccessor defaultAccessor = new DefaultAccessor();
+        defaultAccessor.accessDefaultMembers();
+        
+        
+        
+        
+        
+        
+        
+        
 
 	}
 }
