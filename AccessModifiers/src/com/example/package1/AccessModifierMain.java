@@ -13,6 +13,7 @@ public class AccessModifierMain {
 		publicObj.publicMethod();
 		PublicClass.publicStaticMethod();
 
+		
 		// 2. Protected access demonstration (same package)
 		System.out.println("\n2. PROTECTED ACCESS (Same Package):");
 		ProtectedParent protectedObj = new ProtectedParent();
@@ -21,6 +22,7 @@ public class AccessModifierMain {
 		ProtectedSamePackage samePackageObj = new ProtectedSamePackage();
 		samePackageObj.accessProtected();
 
+		
 		// 3. Default access demonstration
 		System.out.println("\n3. DEFAULT ACCESS (Package-Private):");
 		DefaultClass defaultObj = new DefaultClass();
@@ -29,12 +31,18 @@ public class AccessModifierMain {
 		DefaultAccessor defaultAccessor = new DefaultAccessor();
 		defaultAccessor.accessDefaultMembers();
 
+		
+		
 		// 4. Private access demonstration
 		System.out.println("\n4. PRIVATE ACCESS:");
 		PrivateExample privateObj = new PrivateExample();
 		privateObj.accessPrivateMembers();
 		System.out.println("Getting private field via getter: " + privateObj.getPrivateField());
 		PrivateExample.accessPrivateStaticMembers();
+		
+		
+		
+		
 
 	}
 }
