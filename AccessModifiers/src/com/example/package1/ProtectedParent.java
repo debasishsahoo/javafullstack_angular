@@ -27,6 +27,14 @@ public class ProtectedParent {
 	}
 }
 
+
+
+
+
+
+
+
+
 //out of ProtectedParent
 //Child class in same package
 class ProtectedChild extends ProtectedParent {
@@ -37,9 +45,6 @@ class ProtectedChild extends ProtectedParent {
         protectedStaticMethod();
     }
 }
-
-
-
 
 //Another class in same package (not inheritance)
 class ProtectedSamePackage {
