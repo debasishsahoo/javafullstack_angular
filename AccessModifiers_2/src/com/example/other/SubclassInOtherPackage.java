@@ -1,7 +1,9 @@
 package com.example.other;
 
 import com.example.original.BaseClass;
-public class SubclassInOtherPackage {
+public class SubclassInOtherPackage extends BaseClass {
+	
+//public class SubclassInOtherPackage{
 	 public void testAccess() {
 	        System.out.println("\\n=== Subclass (Different Package) Access ===");
 	        
