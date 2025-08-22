@@ -18,6 +18,7 @@ public class SubclassDifferentPackage extends BaseClass {
         // this.privateMethod();    // NOT accessible
     }
     
+    
     public void testAccessViaObject() {
         System.out.println("\n=== SUBCLASS (DIFFERENT PACKAGE) - VIA OBJECT ===");
         BaseClass obj = new BaseClass();
