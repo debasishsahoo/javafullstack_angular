@@ -37,8 +37,13 @@ Limitations:
       Inheritance represents an "is-a" relationship (e.g., "Dog is an Animal").
    
    
-   
-   
+
+A superclass is the existing class from which properties (fields and methods) are inherited. 
+It's higher up in the inheritance hierarchy.
+
+Purpose:
+    1.General Blueprint
+    2.common state (fields) and behavior (methods)   
    
    
    
