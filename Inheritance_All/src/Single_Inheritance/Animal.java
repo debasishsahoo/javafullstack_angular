@@ -1,4 +1,4 @@
-package inheritance_1;
+package Single_Inheritance;
 
 class Animal { // Parent class
 	
