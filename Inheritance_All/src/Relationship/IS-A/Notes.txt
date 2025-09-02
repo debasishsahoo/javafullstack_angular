@@ -1,0 +1,14 @@
+The most crucial way to understand this connection is through the "is-a" relationship. 
+Inheritance should only be used if this relationship makes logical sense.
+   .A Car is-a Vehicle.
+   .A Truck is-a Vehicle.
+   
+   .A Dog is-a Animal.
+   .A Cat is-a Animal.
+   
+   
+   .A SavingsAccount is-a BankAccount.
+   .A CurrentAccount is-a BankAccount.
+   
+If you can't say "X is-a Y" naturally, then inheritance is probably the wrong tool. 
+This relationship ensures your code models the real world logically.
