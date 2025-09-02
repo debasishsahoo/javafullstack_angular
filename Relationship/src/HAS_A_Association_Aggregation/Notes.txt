@@ -1,0 +1,10 @@
+This is a broad category where one object has a reference to another object. 
+It's the most common relationship and is the basis for composition and aggregation.
+
+a) Aggregation (Weak HAS-A)
+Concept: A "whole-part" relationship where the part can exist independently of the whole. 
+         It's a weak association.
+
+Keyword: new (usually created outside and passed in)
+A Department has Professors, but a Professor can exist without a Department.
+
