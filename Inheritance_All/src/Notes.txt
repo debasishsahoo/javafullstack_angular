@@ -1,0 +1,58 @@
+Features:
+Code Reusability
+    Reuse fields/methods of the superclass without rewriting code.
+   
+Method Overriding
+    Subclasses can redefine a method from the superclass using @Override.
+    Enables runtime polymorphism.
+   
+super Keyword
+    Refers to the immediate superclass.
+    Call superclass methods: super.method()
+    Invoke superclass constructor: super()
+      
+Constructor Chaining
+    The subclass constructor implicitly calls the superclass constructor (using super()).
+    Must be the first statement in the subclass constructor.
+       
+Access Modifiers:
+    private members are not inherited.
+    protected and public members are fully accessible.
+    Default (package-private) members are accessible only within the same package.
+    
+    
+    
+Limitations:
+   No Multiple Inheritance:
+      A class cannot extend more than one class (e.g., class A extends B, C is invalid).
+      Use interfaces to achieve similar functionality.
+      
+   Constructor Inheritance:
+      Constructors are not inherited but can be invoked via super().
+      
+   Final Classes:
+      A final class cannot be inherited (e.g., String class).
+      
+   IS-A Relationship:
+      Inheritance represents an "is-a" relationship (e.g., "Dog is an Animal").
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
