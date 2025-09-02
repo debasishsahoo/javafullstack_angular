@@ -1,6 +1,8 @@
 This is a broad category where one object has a reference to another object. 
 It's the most common relationship and is the basis for composition and aggregation.
 
-Concept: A strong "whole-part" relationship where the part cannot exist without the whole. The lifecycle of the part is tightly controlled by the whole.
+Concept: A strong "whole-part" relationship where the part cannot exist without the whole. 
+         The lifecycle of the part is tightly controlled by the whole.
 
 Keyword: new (the whole object creates the parts itself)
+A Car has an Engine. The Engine cannot exist without the Car.

@@ -1,0 +1,8 @@
+This is the most transient relationship. A class uses another class temporarily, 
+typically as a method parameter or local variable.
+There is no long-term "ownership" of the object.
+
+Concept: A temporary interaction or dependency.
+Keyword: (Method parameters, local variables)
+
+A Driver uses a Car to drive, but the Driver doesn't own the Car (it's not a field).
