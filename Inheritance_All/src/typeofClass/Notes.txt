@@ -1,0 +1,64 @@
+Superclass & Subclass Relationship
+
+Superclass as a foundation
+  - The superclass defines **common fields and methods** that are shared across multiple subclasses.
+  - Example: `Vehicle` provides `brand`, `year`, `start()`, `move()`, etc.
+  
+  
+Subclass extends functionality
+   - The subclass **inherits** everything from the superclass but can also **add its own properties and methods**.
+   - Example: `Car` adds `doors` and `honk()` in addition to `Vehicle`’s features.
+
+
+Code Reusability
+  - Common logic (like starting, moving, displaying info) is written **once in the superclass**.
+  - All subclasses reuse this without rewriting the same code.
+  
+  
+Specialization (Method Overriding)
+  - Subclasses can **override superclass methods** to provide **more specific behavior**.
+  - Example: `Car` overrides `start()` → “Car engine is starting” instead of “Vehicle is starting.”
+  
+  
+Logical Hierarchy
+  - Inheritance creates a **clean, hierarchical structure** → general to specific.
+  - Example: `Vehicle → Car`, `Vehicle → Bike`.
+
+
+Polymorphism Support
+    A superclass reference can hold a subclass object, enabling flexibility and dynamic method binding.
+    
+
+Primary Mechanism for OOP Reusability
+    Inheritance avoids duplication, improves maintainability, and ensures a consistent structure across related classes.
+
+
+
+
+Characteristics
+    Inheritance Flow
+        Properties and methods flow from superclass → subclass.
+        Subclass automatically gets everything from the superclass (except private members).
+        
+    Access to Superclass Members (using super)
+         - `super.methodName()` → Calls the superclass version of a method.
+         - `super(parameters)` → Calls the superclass constructor.
+         
+    Method Overriding
+         A subclass can override superclass methods.
+         Must keep the same method signature.
+         Allows providing a specific implementation for subclass behavior.
+         
+    Additional Features in Subclass
+    - Subclass can introduce **new fields and methods** beyond what is inherited.
+    - Example: `Car` adds `doors` and `honk()` even though `Vehicle` doesn’t have them.
+
+
+
+
+
+
+
+
+
+
