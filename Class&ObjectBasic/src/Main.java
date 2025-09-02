@@ -5,6 +5,17 @@ public class Main {
         System.out.println("Car color: " + myCar1.color);
         System.out.println("Car speed: " + myCar1.speed);
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         myCar1.accelerate(20);  // behavior changes state
         myCar1.brake(30);       // behavior changes state
         

@@ -1,3 +1,15 @@
+//Can a constructor return a value? Why or why not?
+//-No, a constructor cannot explicitly return a value.
+//-Unlike methods, constructors do not have a return type (not even void).
+//-Their job is to initialize the object, not to return something.
+
+//When you create an object using new, the constructor is called automatically, 
+//and it returns the reference of the object being created, 
+//but this return is implicit and handled by the JVM — you cannot control or change it.
+
+
+
+
 public class Student {
 	private String name;
 	private int age;

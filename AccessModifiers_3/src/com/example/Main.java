@@ -12,6 +12,7 @@ import com.example.package2.DifferentPackageClass;
  */
 public class Main {
     
+	
     public static void main(String[] args) {
         System.out.println("JAVA ACCESS MODIFIERS DEMONSTRATION");
         System.out.println("===================================");
