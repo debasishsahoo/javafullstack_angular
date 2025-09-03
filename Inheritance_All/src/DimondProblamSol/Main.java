@@ -17,5 +17,34 @@ public class Main {
 		advancedMachine.scan("Contract");
 		advancedMachine.fax("Signed Agreement");
 
+		System.out.println("\n=== Interface Static Methods ===");
+		Printer.showBrand(); // Call static method on Printer interface
+		Scanner.showBrand(); // Call static method on Scanner interface
+
+		
+		
+		
+		
+		
+		
+		System.out.println("\n=== Polymorphism with Interfaces ===");
+		Printer printer = basicMachine;// MultiFunctionMachine is-a Printer
+		printer.print("Document via Printer interface");
+
+		Scanner scanner = basicMachine; // MultiFunctionMachine is-a Scanner
+		scanner.scan("Document via Scanner interface");
+		
+		// Demonstrating that the actual implementation is used
+        System.out.println("\n=== Runtime Polymorphism ===");
+        Printer advancedAsPrinter = advancedMachine;
+        advancedAsPrinter.print("Document via Printer reference");
+		
+		
+		
+		
+		
+		
+		
+
 	}
 }
