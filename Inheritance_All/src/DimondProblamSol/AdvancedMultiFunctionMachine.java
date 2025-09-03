@@ -18,5 +18,6 @@ class AdvancedMultiFunctionMachine extends MultiFunctionMachine implements Fax{
     public void powerOn() {
         super.powerOn(); // Call the parent's powerOn method
         System.out.println("Initializing fax system...");
+        
     }
 }

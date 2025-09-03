@@ -7,20 +7,13 @@ class MultiFunctionMachine implements Printer, Scanner {
 		this.model = model;
 	}
 
-	
-	
-	
-	
+
 	// Implement Printer's abstract method
 	@Override
 	public void print(String document) {
 		System.out.println("Printing: " + document + " on " + model);
 	}
 
-	
-	
-	
-	
 	// Implement Scanner's abstract method
 	@Override
 	public void scan(String document) {
