@@ -14,7 +14,7 @@ class Child extends Parent {
         System.out.println("3. Child constructor");
     }
 }
-public class ConstructorChainingDemo {
+public class ImplicitConstructorChaining {
 	public static void main(String[] args) {
 		 // Creating object of Child
 		Child obj = new Child();
@@ -25,7 +25,8 @@ public class ConstructorChainingDemo {
 //2. Then `Parent()` runs.
 //3. Finally `Child()` runs.
 
-//**This happens because every constructor implicitly calls `super()` (unless you explicitly call a different one).**
+//**This happens because every constructor**
+//**implicitly calls `super()` (unless you explicitly call a different one).**
 
 
 
