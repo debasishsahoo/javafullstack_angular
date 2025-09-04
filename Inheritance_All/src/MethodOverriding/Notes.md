@@ -26,3 +26,53 @@ Method overriding occurs when:
 5. **Constructors cannot be overridden**.
 
 
+
+
+
+
+## **Same Method Signature**:
+
+### The overriding method must have the same name, parameters, and return type as the parent method.
+
+# **Access Modifier Rules**:
+
+### The overriding method cannot be more restrictive than the parent method.
+
+# **Return Type Compatibility**:
+
+### The return type must be the same or a covariant (subtype) of the parent's return type.
+
+
+
+# The @Override Annotation
+
+The `@Override` annotation is recommended because it:
+
+- Ensures you're actually overriding (catches typos)
+- Makes code more readable and maintainable
+- Provides compile-time checking
+
+
+
+
+Runtime Polymorphism in Action
+
+Polymorphic behavior:
+
+Using super in Overridden Methods:
+
+
+Methods That Cannot Be Overridden
+## **Static Methods**:
+
+### Static methods cannot be overridden, only hidden.
+
+# **Final Methods**:
+
+## Methods marked `final` cannot be overridden.
+
+# **Private Methods**:
+
+## Private methods are not inherited, so cannot be overridden.
+
+
