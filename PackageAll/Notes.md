@@ -22,12 +22,12 @@ Purposes
 Package Declaration and Naming:
     The package statement must be the first non-comment line in a Java file:
     
-   '''
+```
     package com.company.projectname.modulename;
          public class MyClass {
                 // class content
                  }
-    '''
+```
     
  Naming Conventions: Packages follow reverse domain naming conventions to ensure global uniqueness. If your domain is example.com, your packages might start with com.example. Package names are typically all lowercase.   
  
@@ -116,7 +116,7 @@ The Java runtime uses the classpath to locate packages and classes. The classpat
 Packages are fundamental to professional Java development, enabling the creation of large, well-organized applications with clear separation of concerns and proper encapsulation.
 
 
-
+```
 src/
 └── com/
     └── company/
@@ -138,7 +138,7 @@ src/
             ├── EmployeeDAO.java(SERVER)
             └── impl/
                 └── InMemoryEmployeeDAO.java(LOCAL)
-
+```
 
 
 
