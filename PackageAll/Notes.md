@@ -116,7 +116,7 @@ The Java runtime uses the classpath to locate packages and classes. The classpat
 Packages are fundamental to professional Java development, enabling the creation of large, well-organized applications with clear separation of concerns and proper encapsulation.
 
 
-```
+```bash
 src/
 └── com/
     └── company/
