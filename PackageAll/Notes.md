@@ -22,7 +22,7 @@ Purposes
 Package Declaration and Naming:
     The package statement must be the first non-comment line in a Java file:
     
-```
+```java
     package com.company.projectname.modulename;
          public class MyClass {
                 // class content
