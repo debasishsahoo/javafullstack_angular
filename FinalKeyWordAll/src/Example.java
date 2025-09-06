@@ -4,7 +4,6 @@ class Vehicle {
 		System.out.println("Engine from Vehicle");
 	} // Cannot override
 }
-
 class Car extends Vehicle {
 	// @Override
 	// void startEngine() { }
@@ -18,25 +17,37 @@ final class Car1 extends Vehicle {
 
 }
 
-public class Example {
-	final int a = 10; // Direct initialization
-	final int b; // Constructor initialization
-	static final int c; // Static block initialization
+class Example {
+    // final variables
+    final int instanceValue;        // Must be set in constructor
+    static final double PI = 3.14159; // Constant
 
-	static {
-		c = 30; // Static block
-	}
+    // static variable
+    static int counter = 0;
 
-	public Example() {
-		b = 20; // Constructor
-		// c = 30; Only Static Block
-	}
+    Example(int value) {
+        instanceValue = value; // constructor initialization
+        counter++;             // shared among all objects
+    }
 
-	public static void main() {
-		Car1 c1 = new Car1();
-		
-		c1.accessMethod();
+    final void cannotOverride() {
+        System.out.println("This method cannot be overridden");
+    }
 
-	}
+    static void staticMethod() {
+        System.out.println("Static method called");
+    }
 
+    public static void main(String[] args) {
+        Example e1 = new Example(10);
+        Example e2 = new Example(20);
+
+        System.out.println("PI = " + Example.PI);
+        System.out.println("Counter = " + Example.counter);
+        System.out.println("e1.instanceValue = " + e1.instanceValue);
+        System.out.println("e2.instanceValue = " + e2.instanceValue);
+
+        Example.staticMethod();
+    }
 }
+
