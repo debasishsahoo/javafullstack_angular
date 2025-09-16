@@ -1,5 +1,11 @@
 package Compile_Time_Polymorphism;
 
+
+
+
+//Method overloading is a feature in Java that allows a class 
+//to have multiple methods with the same name but different parameter lists. 
+//compiler determines which method to call based on the method signature at compile time.
 //Method Overloading 
 public class MathOperations {
 
@@ -66,3 +72,25 @@ public class MathOperations {
 	}
 
 }
+
+
+//Rules
+//Multiple methods with the same name in the same class
+//Different parameter lists (number, type, or order of parameters)
+//Resolved at compile time (static binding)
+//Also known as static polymorphism
+//Note: Return type is NOT part of the method signature for overloading purposes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
