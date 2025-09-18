@@ -6,10 +6,9 @@ public class Rule3 {
 	public void process(Integer x) {
 		System.out.println("Processing Integer wrapper: " + x);
 	}
-
-//	public void process(int x) {
-//		System.out.println("Processing int primitive: " + x);
-//	}
+	public void process(int x) {
+		System.out.println("Processing int primitive: " + x);
+	}
 
 	public void handle(int x) {
 		System.out.println("Handling int: " + x);
