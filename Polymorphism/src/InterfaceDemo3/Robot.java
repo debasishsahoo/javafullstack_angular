@@ -40,3 +40,5 @@ class Robot implements Drawable, Movable, Resizable {
 	}
 
 }
+
+//Concrete classes

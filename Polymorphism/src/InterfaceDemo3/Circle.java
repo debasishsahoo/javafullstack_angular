@@ -19,3 +19,5 @@ package InterfaceDemo3;
 	        System.out.println("Circle: " + color + ", radius: " + radius);
 	    }
 }
+ 
+ //Concrete classes

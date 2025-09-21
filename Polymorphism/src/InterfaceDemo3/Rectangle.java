@@ -31,3 +31,5 @@ public class Rectangle implements Drawable, Movable{
 	        System.out.println("Rectangle stopped at (" + x + ", " + y + ")");
 	    }
 }
+
+//Concrete classes
