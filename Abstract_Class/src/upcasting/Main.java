@@ -11,11 +11,11 @@ public class Main {
         animal.makeSound();   // Output: Woof!
 
         
-        // animal.wagTail(); //ERROR: wagTail() not defined in Animal
+        //animal.wagTail(); //ERROR: wagTail() not defined in Animal
         // Even though the object is Dog, reference type is Animal, so only Animal's methods are accessible
 
         // If we need Dog-specific method, we must downcast back to Dog
-        Dog downcastedDog = (Dog) animal;
+        Dog downcastedDog = (Dog) animal;  //(int)10.5
         downcastedDog.wagTail();  // Output: Wagging tail
 	}
 }
