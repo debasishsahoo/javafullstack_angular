@@ -68,36 +68,45 @@ public class ConnectionFactory {
 		}
 		return constructor.get();
 	}
-	
+
 	// Factory method with configuration
-    public static DatabaseConnection createConnection(String typeKey, Map<String, Object> config) {
-        DatabaseConnection connection = createConnection(typeKey);
-        applyConfiguration(connection, config);
-        return connection;
-    }
+	public static DatabaseConnection createConnection(String typeKey, Map<String, Object> config) {
+		DatabaseConnection connection = createConnection(typeKey);
+		applyConfiguration(connection, config);
+		return connection;
+	}
 
-    // Bulk connection creation
-    public static List<DatabaseConnection> createConnections(String typeKey, int count) {
-        List<DatabaseConnection> connections = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            connections.add(createConnection(typeKey));
-        }
-        return connections;
-    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	// Bulk connection creation
+	public static List<DatabaseConnection> createConnections(String typeKey, int count) {
+		List<DatabaseConnection> connections = new ArrayList<>();
+		for (int i = 0; i < count; i++) {
+			connections.add(createConnection(typeKey));
+		}
+		return connections;
+	}
 
+	// Helper method to apply configuration
+
+	private static void applyConfiguration(DatabaseConnection connection, Map<String, Object> config) {
+		if (config == null)
+			return;
+
+		// Apply common configuration
+		if (config.containsKey("autoConnect") && (Boolean) config.get("autoConnect")) {
+			connection.connect();
+		}
+
+		// Apply type-specific configuration using polymorphism and interfaces
+		if (connection instanceof ConnectionPoolable && config.containsKey("poolSize")) {
+			((ConnectionPoolable) connection).setPoolSize((Integer) config.get("poolSize"));
+		}
+
+		if (connection instanceof TransactionManageable && config.containsKey("transactionTimeout")) {
+			((TransactionManageable) connection).setTransactionTimeout((Integer) config.get("transactionTimeout"));
+		}
+
+		if (connection instanceof SessionManageable && config.containsKey("sessionTimeout")) {
+			((SessionManageable) connection).setSessionTimeout((Integer) config.get("sessionTimeout"));
+		}
+	}
 }
