@@ -19,7 +19,7 @@ public interface DatabaseConnection {
 	long getConnectionId();
 
 	// 3. Transaction management (default implementation)
-	default boolean beginTransation() {
+	default boolean beginTransaction() {
 		System.out.println("Basic transaction started");
 		return true;
 	}
