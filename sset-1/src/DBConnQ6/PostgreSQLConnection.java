@@ -86,6 +86,25 @@ public class PostgreSQLConnection implements DatabaseConnection, TransactionMana
 		System.out.println("PostgreSQL transaction started: " + txId + " (timeout: " + transactionTimeout + "s)");
 		return true;
 	}
+	
+	@Override
+    public boolean commitTransaction() {
+        if (!activeTransactions.isEmpty()) {
+            String txId = activeTransactions.remove(activeTransactions.size() - 1);
+            System.out.println("PostgreSQL transaction committed: " + txId);
+            return true;
+        }
+        return false;
+    }
+	@Override
+    public boolean rollbackTransaction() {
+        if (!activeTransactions.isEmpty()) {
+            String txId = activeTransactions.remove(activeTransactions.size() - 1);
+            System.out.println("PostgreSQL transaction rolled back: " + txId);
+            return true;
+        }
+        return false;
+    }
 
 	
 	// TransactionManageable implementation

@@ -5,6 +5,7 @@ import java.util.*;
 public class DatabaseFactoryDemo {
 	public static void main(String[] args) {
 		System.out.println("=== Advanced Database Connection Factory Demo ===\\n");
+
 		// 1. Demonstrate available connection types
 		System.out.println("1. Available Connection Types:");
 		ConnectionFactory.getAvailableConnectionTypes().forEach(type -> {
@@ -25,6 +26,9 @@ public class DatabaseFactoryDemo {
 			conn.connect();
 			conn.executeQuery("SELECT * FROM users");
 
+			// Call beginTransaction on DatabaseConnection (available to all)
+			conn.beginTransaction();
+
 			// Demonstrate interface-specific behaviors
 			if (conn instanceof ConnectionPoolable) {
 				((ConnectionPoolable) conn).setPoolSize(20);
@@ -33,6 +37,7 @@ public class DatabaseFactoryDemo {
 			if (conn instanceof TransactionManageable) {
 				((TransactionManageable) conn).beginTransaction();
 				((TransactionManageable) conn).savepoint("checkpoint1");
+				((TransactionManageable) conn).setTransactionTimeout(60);
 			}
 
 			if (conn instanceof SessionManageable) {
@@ -85,6 +90,26 @@ public class DatabaseFactoryDemo {
 		} catch (IllegalArgumentException e) {
 			System.out.println("Expected error: " + e.getMessage());
 		}
+		
+		
+		// 8. Demonstrate TransactionManageable-specific behavior
+        System.out.println("\n8. TransactionManageable Specific Behavior:");
+        PostgreSQLConnection pgConn = ConnectionFactory.createPostgreSQLConnection();
+        pgConn.connect();
+        
+        // Cast to TransactionManageable to access advanced features
+        TransactionManageable transactionManager = (TransactionManageable) pgConn;
+        transactionManager.beginTransaction();
+        transactionManager.savepoint("sp1");
+        transactionManager.setTransactionTimeout(120);
+        System.out.println("Active transactions: " + transactionManager.getActiveTransactions());
+        transactionManager.commitTransaction();
+        
+        pgConn.disconnect();
+		
+		
+		
+		
 
 		// Cleanup
 		mysql.disconnect();
