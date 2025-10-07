@@ -36,6 +36,11 @@ public class Main {
 			case 2: // READ ALL
 				dao.getAllStudents();
 				break;
+			case 3: // READ BY ID
+				System.out.print("Enter student ID: ");
+				int searchId = scanner.nextInt();
+				dao.getStudentById(searchId);
+				break;
 			case 6: // EXIT
 
 				System.out.println("Thank you for using the system. Goodbye!");

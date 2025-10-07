@@ -38,23 +38,21 @@ public class Operations {
 	public void getAllStudents() {
 		try (Connection conn = MySqlConfig.getConnection();
 				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(SELECTQUERY)
-		) {
+				ResultSet rs = stmt.executeQuery(SELECTQUERY)) {
 			System.out.println("\n===== ALL STUDENTS =====");
 			boolean hasRecords = false;
 			while (rs.next()) {
 				hasRecords = true;
-				Student student = new Student(rs.getInt("id"), 
-						rs.getString("name"), rs.getString("email"),
+				Student student = new Student(rs.getInt("id"), rs.getString("name"), rs.getString("email"),
 						rs.getInt("age"));
 				System.out.println(student);
 			}
-			
+
 			if (!hasRecords) {
 				System.out.println("No students found.");
 			}
 			System.out.println("========================\n");
-			
+
 		} catch (SQLException e) {
 			System.out.println("Error retrieving students: " + e.getMessage());
 		}
@@ -63,6 +61,23 @@ public class Operations {
 
 	// Data VIEW(View Single Record)
 	public void getStudentById(int id) {
+		try (Connection conn = MySqlConfig.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(WHEREQUERY)) {
+			
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				Student student = new Student(rs.getInt("id"), 
+						rs.getString("name"), rs.getString("email"),
+						rs.getInt("age"));
+				System.out.println("\n" + student + "\n");
+			} else {
+				System.out.println("No student found with ID: " + id);
+			}
+		} catch (SQLException e) {
+			System.out.println("Error adding student: " + e.getMessage());
+		}
 
 	}
 
