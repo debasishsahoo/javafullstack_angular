@@ -83,10 +83,43 @@ public class Operations {
 
 	// Data UPDATE(Update Single Record)
 	public void updateStudent(int id, String name, String email, int age) {
+		
+		try (Connection conn = MySqlConfig.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(UPDATEQUERY)) {
+			pstmt.setString(1, name);
+			pstmt.setString(2, email);
+			pstmt.setInt(3, age);
+			pstmt.setInt(4, id);
+			
+			int rows = pstmt.executeUpdate();
+			if (rows > 0) {
+				System.out.println(" Student Update successfully!");
+			}else {
+				System.out.println("No student found with ID:" + id);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("Error adding student: " + e.getMessage());
+		}
 
 	}
 
 	// Data DELETE(Delete Single Record)
 	public void deleteStudent(int id) {
+		try (Connection conn = MySqlConfig.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(DELETEQUERY)) {
+			
+			pstmt.setInt(1, id);
+			
+			int rows = pstmt.executeUpdate();
+			if (rows > 0) {
+				System.out.println(" Student Delete successfully!");
+			}else {
+				System.out.println("No student found with ID:" + id);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("Error adding student: " + e.getMessage());
+		}
 	}
 }

@@ -36,13 +36,34 @@ public class Main {
 			case 2: // READ ALL
 				dao.getAllStudents();
 				break;
+				
 			case 3: // READ BY ID
 				System.out.print("Enter student ID: ");
 				int searchId = scanner.nextInt();
 				dao.getStudentById(searchId);
 				break;
-			case 6: // EXIT
+				
+			case 4: // UPDATE
+				System.out.print("Enter student ID to update: ");
+				int updateId = scanner.nextInt();
+				scanner.nextLine();
+				System.out.print("Enter new name: ");
+				String newName = scanner.nextLine();
+				System.out.print("Enter new email: ");
+				String newEmail = scanner.nextLine();
+				System.out.print("Enter new age: ");
+				int newAge = scanner.nextInt();
 
+				dao.updateStudent(updateId, newName, newEmail, newAge);
+				break;
+				
+			case 5: // DELETE
+				System.out.print("Enter student ID to delete: ");
+				int deleteId = scanner.nextInt();
+				dao.deleteStudent(deleteId);
+				break;
+				
+			case 6: // EXIT
 				System.out.println("Thank you for using the system. Goodbye!");
 				scanner.close();
 				System.exit(0);

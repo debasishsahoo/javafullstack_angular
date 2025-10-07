@@ -110,7 +110,7 @@ public class StudentDAO {
             
             int rows = pstmt.executeUpdate();
             if (rows > 0) {
-                System.out.println("✓ Student deleted successfully!");
+                System.out.println(" Student deleted successfully!");
             } else {
                 System.out.println("No student found with ID: " + id);
             }
