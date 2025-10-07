@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+import DAO.Operations;
+import Entity.Student;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Operations dao=new Operations();
+		System.out.println("STUDENT MANAGEMENT SYSTEM");
+		while (true) {
+			System.out.println("===== MENU =====");
+			System.out.println("1. Add Student (CREATE)");
+			System.out.println("2. View All Students (READ)");
+			System.out.println("3. View Student by ID (READ)");
+			System.out.println("4. Update Student (UPDATE)");
+			System.out.println("5. Delete Student (DELETE)");
+			System.out.println("6. Exit");
+			System.out.print("Enter your choice: ");
+
+			int choice = scanner.nextInt();
+			scanner.nextLine(); // Consume newline
+			switch (choice) {
+			case 1: // CREATE
+				System.out.print("Enter name: ");
+				String name = scanner.nextLine();
+				System.out.print("Enter email: ");
+				String email = scanner.nextLine();
+				System.out.print("Enter age: ");
+				int age = scanner.nextInt();
+
+				Student newStudent = new Student(name, email, age);
+				dao.addStudent(newStudent);
+				break;
+			case 6: // EXIT
+
+				System.out.println("Thank you for using the system. Goodbye!");
+				scanner.close();
+				System.exit(0);
+			default:
+				System.out.println("Invalid choice. Please try again.");
+			}
+
+			System.out.println();
+		}
+
+	}
+}
+
