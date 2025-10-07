@@ -2,7 +2,9 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import Configuration.MySqlConfig;
 import Entity.Student;
@@ -19,7 +21,6 @@ public class Operations {
 	public void addStudent(Student student) {
 		try (Connection conn = MySqlConfig.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(INSERTQUERY)) {
-
 			pstmt.setString(1, student.getName());
 			pstmt.setString(2, student.getEmail());
 			pstmt.setInt(3, student.getAge());
@@ -34,7 +35,30 @@ public class Operations {
 	}
 
 	// Data VIEW(View All Record)
-	public void getAllStudent() {
+	public void getAllStudents() {
+		try (Connection conn = MySqlConfig.getConnection();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(SELECTQUERY)
+		) {
+			System.out.println("\n===== ALL STUDENTS =====");
+			boolean hasRecords = false;
+			while (rs.next()) {
+				hasRecords = true;
+				Student student = new Student(rs.getInt("id"), 
+						rs.getString("name"), rs.getString("email"),
+						rs.getInt("age"));
+				System.out.println(student);
+			}
+			
+			if (!hasRecords) {
+				System.out.println("No students found.");
+			}
+			System.out.println("========================\n");
+			
+		} catch (SQLException e) {
+			System.out.println("Error retrieving students: " + e.getMessage());
+		}
+
 	}
 
 	// Data VIEW(View Single Record)

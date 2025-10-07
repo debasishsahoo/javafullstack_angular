@@ -32,6 +32,10 @@ public class Main {
 				Student newStudent = new Student(name, email, age);
 				dao.addStudent(newStudent);
 				break;
+				
+			case 2: // READ ALL
+				dao.getAllStudents();
+				break;
 			case 6: // EXIT
 
 				System.out.println("Thank you for using the system. Goodbye!");
