@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: #2d3436;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #636e72;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2d3436;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: #f8f9fa;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #74b9ff;
+    background: white;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.btn-primary {
+    background: #00b894;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #00a085;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #74b9ff;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #0984e3;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #fd79a8;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #e84393;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .form-header h2 {
+        font-size: 24px;
+    }
+}
