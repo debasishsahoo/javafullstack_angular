@@ -1,0 +1,9 @@
+abstract class ClassName {
+       // Abstract method (no body)
+       abstract returnType methodName();
+       
+       // Concrete method (with body)
+           returnType concreteMethod() {
+                 // method implementation
+          }
+}
