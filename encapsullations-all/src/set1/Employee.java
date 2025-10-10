@@ -1,5 +1,11 @@
 package set1;
 
+//1.Data Hiding
+//2.Increased Flexibility
+//3.Reusability
+//4.Easy Testing and Maintenance
+
+
 public class Employee {
 	// Private variables (data hiding)
 	private String name;
