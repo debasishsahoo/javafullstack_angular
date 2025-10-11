@@ -23,7 +23,36 @@ finally: Executes code regardless of whether an exception occurred (used for cle
 throw: Explicitly throws an exception.
 throws: Declares that a method may throw exceptions.
 
-
+java.lang.Object
+    └── java.lang.Throwable
+        ├── java.lang.Error
+        │   ├── VirtualMachineError
+        │   │   ├── OutOfMemoryError
+        │   │   ├── StackOverflowError
+        │   │   └── InternalError
+        │   ├── AssertionError
+        │   ├── LinkageError
+        │   └── ThreadDeath
+        │
+        └── java.lang.Exception
+            ├── IOException
+            │   ├── FileNotFoundException
+            │   ├── EOFException
+            │   └── SocketException
+            ├── SQLException
+            ├── ClassNotFoundException
+            ├── CloneNotSupportedException
+            ├── InterruptedException
+            │
+            └── RuntimeException (Unchecked)
+                ├── NullPointerException
+                ├── ArrayIndexOutOfBoundsException
+                ├── ArithmeticException
+                ├── IllegalArgumentException
+                │   └── NumberFormatException
+                ├── IllegalStateException
+                ├── ClassCastException
+                └── UnsupportedOperationException
 
 
 
