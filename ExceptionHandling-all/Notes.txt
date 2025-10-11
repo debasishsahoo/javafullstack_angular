@@ -1,0 +1,39 @@
+All exception classes in Java inherit from the Throwable class:
+                  hierarchy 
+Throwable
+├── Error (serious problems applications shouldn't catch)
+└── Exception
+    ├── RuntimeException (unchecked exceptions)
+    └── Other exceptions (checked exceptions)               
+                  
+Checked Exceptions: Must be caught or declared in the method signature using throws. 
+Examples include IOException, SQLException, ClassNotFoundException.                
+
+Unchecked Exceptions: Runtime exceptions that don't need to be explicitly handled.
+ Examples include NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException.               
+
+Errors: Serious problems that applications shouldn't try to catch, 
+like OutOfMemoryError or StackOverflowError.  
+
+
+Exception Handling Keywords
+try: Wraps code that might throw an exception.
+catch: Catches and handles specific exception types.
+finally: Executes code regardless of whether an exception occurred (used for cleanup).
+throw: Explicitly throws an exception.
+throws: Declares that a method may throw exceptions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
