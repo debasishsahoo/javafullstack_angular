@@ -1,4 +1,4 @@
-package Hierarchy;
+package AdvanceTryCatch;
 
 public class UnCheckedException {
 

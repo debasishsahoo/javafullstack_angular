@@ -1,4 +1,4 @@
-package Hierarchy;
+package AdvanceTryCatch;
 
 
 //java.lang.Object

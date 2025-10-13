@@ -1,4 +1,4 @@
-package Hierarchy;
+package AdvanceTryCatch;
 
 import java.io.FileInputStream;
 import java.io.IOException;
