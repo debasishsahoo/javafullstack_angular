@@ -2,6 +2,12 @@ package Basic;
 
 public class SingleCatchBlock {
 	public static void main(String[] args) {
+		
+//		int result = 10 / 0; // This will cause ArithmeticException
+//		System.out.println("Result: " + result);
+		
+		
+		
 		try {
 			// Code that might throw an exception
 			int result = 10 / 0; // This will cause ArithmeticException

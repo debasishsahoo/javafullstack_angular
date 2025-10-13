@@ -1,5 +1,8 @@
 package Basic;
 
+//throw creates and throws an exception object at runtime.
+//throw keyword is used to manually generate(create)
+//throws (send) an exception during program execution.
 public class Usethrow {
 	private int age;
 
@@ -28,12 +31,6 @@ public class Usethrow {
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
-		
-		
-		
-		
-		
-		
 	}
 
 }
