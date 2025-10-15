@@ -1,0 +1,75 @@
+Thread Lifecycle
+New - Thread is created but not yet started
+Runnable - Thread is ready to run and waiting for CPU time
+Running - Thread is executing
+Blocked/Waiting - Thread is waiting for a resource or another thread
+Terminated - Thread has completed execution
+
+
+
+Thread Methods
+start()           Starts a new thread
+run()             Defines the task to execute
+sleep(ms)         Pauses execution temporarily
+join()            Waits for another thread to finish
+setPriority()     Sets thread priority
+isAlive()         Checks if thread is still running
+interrupt()       Interrupts a sleeping/waiting thread
+
+Synchronization
+
+Synchronization is a mechanism to
+ensures that only one thread can access a shared resource at a time.
+
+resource(like a variable, method, or block of code)
+
+It prevents:
+1.Thread interference (two threads modifying the same data)
+2.Memory consistency errors (threads reading stale or inconsistent data)
+
+Why Synchronization is Needed?
+
+  class Counter{
+  
+  int Count=0;
+  public void increment(){Count++;}
+  
+ }
+
+if two threads call increment() at the same time,both might read the same value of count, 
+increment it and then write it back — causing a lost update.
+
+Without synchronized():           With synchronized:
+----------------------          ---------------------
+T1 --> reads count(0)           T1 --> lock() → reads 0
+T2 --> reads count(0)           T2 --> waits
+T1 --> count++ (1)              T1 --> count++ (1)
+T2 --> count++ (1)              T1 --> unlock()
+                                T2 --> lock() → reads 1 → count++ (2)
+90                              100
+race condition                  Safe (one thread at a time)
+May lose updates                Always consistent
+Non-shared data                 Shared mutable data
+Faster                          Slightly slower due to locking
+
+
+
+Thread Communication
+wait() - Causes current thread to wait until another thread invokes notify()
+notify() - Wakes up a single waiting thread
+notifyAll() - Wakes up all waiting threads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
