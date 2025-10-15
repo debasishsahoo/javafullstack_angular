@@ -70,3 +70,5 @@ bin/
 *.orig
 *.rej
 /.metadata/
+./Multithreading-all/
+
