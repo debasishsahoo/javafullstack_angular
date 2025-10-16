@@ -10,3 +10,6 @@ abstract class Animal {
 	}
 
 }
+
+
+class Student{}
