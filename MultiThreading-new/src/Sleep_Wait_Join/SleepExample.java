@@ -1,7 +1,17 @@
 package Sleep_Wait_Join;
 //Static method - called on Thread class, not thread instance
+//Thread.sleep() is a static method, so you call it like Thread.sleep(2000) — not t.sleep(2000).
 //Does NOT release locks - if thread holds a synchronized lock, it keeps it
 //Wakes up automatically after the specified time
+//Thread state: RUNNABLE → TIMED_WAITING → RUNNABLE
+//It pauses the current thread (not all threads) for the given duration.
+
+//Does Not Release Locks
+//If a thread is inside a synchronized block and calls sleep(),
+//it still holds the lock — preventing other threads from entering that block.
+//SyncThread-1 acquires the lock and goes to sleep for 3 seconds.
+//During this time, SyncThread-2 must wait — it is BLOCKED.
+
 
 
 
