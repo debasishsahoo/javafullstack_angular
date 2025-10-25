@@ -11,6 +11,10 @@ public class ListCreationDemo {
 	public static void main(String[] args) {
 		System.out.println("--- List Creation Demo ---");
 		List<String> arrayList = new ArrayList<>();
+		
+		
+		
+		
 		List<String> linkedList = new LinkedList<>();
 		List<String> vector = new Vector<>();
 
