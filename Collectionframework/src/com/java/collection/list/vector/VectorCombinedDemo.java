@@ -6,7 +6,6 @@ import java.util.ListIterator;
 import java.util.Vector;
 
 public class VectorCombinedDemo {
-
 	public static void main(String[] args) {
 		// 1. Creating a Vector (default capacity 10)
 		Vector<Object> vector = new Vector<>();
@@ -31,77 +30,61 @@ public class VectorCombinedDemo {
 
 		// 5. Iterating using Enumeration (Legacy)
 		System.out.println("\nIterating using Enumeration:");
-		
 		Enumeration<Object> e = vector.elements();
 		while (e.hasMoreElements()) {
 			System.out.println(e.nextElement());
 		}
-		
-		
+
 		// 6. Iterating using Iterator
-        System.out.println("\nIterating using Iterator:");
-        Iterator<Object> it = vector.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-        }
+		System.out.println("\nIterating using Iterator:");
+		Iterator<Object> it = vector.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
 
-        // 7. Iterating using ListIterator
-        System.out.println("\nIterating using ListIterator (forward):");
-        ListIterator<Object> listIt = vector.listIterator();
-        while (listIt.hasNext()) {
-            System.out.println(listIt.next());
-        }
-		
-		
-     // 8. Demonstrate thread-safe addition (simple example)
-        Thread t1 = new Thread(() -> {
-            synchronized (vector) {
-                vector.add("Thread-1");
-                System.out.println("Thread-1 added element");
-            }
-        });
+		// 7. Iterating using ListIterator
+		System.out.println("\nIterating using ListIterator (forward):");
+		ListIterator<Object> listIt = vector.listIterator();
+		while (listIt.hasNext()) {
+			System.out.println(listIt.next());
+		}
 
-        Thread t2 = new Thread(() -> {
-            synchronized (vector) {
-                vector.add("Thread-2");
-                System.out.println("Thread-2 added element");
-            }
-        });
+		// 8. Demonstrate thread-safe addition (simple example)
+		Thread t1 = new Thread(() -> {
+			synchronized (vector) {
+				vector.add("Thread-1");
+				System.out.println("Thread-1 added element");
+			}
+		});
 
-        t1.start();
-        t2.start();
+		Thread t2 = new Thread(() -> {
+			synchronized (vector) {
+				vector.add("Thread-2");
+				System.out.println("Thread-2 added element");
+			}
+		});
 
-        try {
-            t1.join();
-            t2.join();
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-		
-		
-        // 9. Final Vector after multithreaded additions
-        System.out.println("\nFinal Vector (after threads): " + vector);
-		
-        // 10. Demonstrate clone() and capacity
-        Vector<Object> clonedVector = (Vector<Object>) vector.clone();
-        System.out.println("\nCloned Vector: " + clonedVector);
-        System.out.println("Size: " + vector.size());
-        System.out.println("Capacity: " + vector.capacity());
+		t1.start();
+		t2.start();
 
-        // 11. Clearing Vector
-        vector.clear();
-        System.out.println("Vector after clearing: " + vector);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		try {
+			t1.join();
+			t2.join();
+		} catch (InterruptedException ex) {
+			ex.printStackTrace();
+		}
 
+		// 9. Final Vector after multithreaded additions
+		System.out.println("\nFinal Vector (after threads): " + vector);
+
+		// 10. Demonstrate clone() and capacity
+		Vector<Object> clonedVector = (Vector<Object>) vector.clone();
+		System.out.println("\nCloned Vector: " + clonedVector);
+		System.out.println("Size: " + vector.size());
+		System.out.println("Capacity: " + vector.capacity());
+
+		// 11. Clearing Vector
+		vector.clear();
+		System.out.println("Vector after clearing: " + vector);
 	}
-
 }
