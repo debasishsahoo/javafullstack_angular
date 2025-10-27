@@ -1,5 +1,5 @@
 package com.java.Hash;
-
+//Better hashCode() Implementation using Objects.hash()
 import java.util.HashSet;
 import java.util.Objects;
 
