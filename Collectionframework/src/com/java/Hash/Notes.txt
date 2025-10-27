@@ -1,0 +1,19 @@
+The key contract: If two objects are equal (according to equals()), they must have the same hash code. However, 
+two objects with the same hash code don't have to be equal (collision).
+
+
+Short answer: 31
+.31 is small
+.odd
+.prime
+.equals 32 - 1  (gives a good distribution for common inputs)
+can be computed quickly as (i << 5) - i
+
+1) Polynomial rolling idea (what 31 actually does)
+
+h = 0;
+for each character c:
+    h = 31 * h + c;
+    
+This treats the sequence like a polynomial in base 31:
+h = c0*31^(n-1) + c1*31^(n-2) + ... + cn-1
