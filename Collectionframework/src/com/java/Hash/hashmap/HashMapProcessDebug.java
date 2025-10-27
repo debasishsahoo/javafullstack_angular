@@ -54,14 +54,14 @@ public class HashMapProcessDebug {
      private int hash(K key) {
          if (key == null) return 0;
          int h = key.hashCode();
-         int mixed = h ^ (h >>> 16); // reduce collisions
+         int mixed = h ^ (h >>> 16); // reduce collisions XOR
          System.out.println("DEBUG: hashCode(" + key + ") = " + h + ", mixed = " + mixed);
          return mixed;
      }
 
      // Step 2: Calculate index
      private int indexFor(int hash, int length) {
-         int index = hash & (length - 1);
+         int index = hash & (length - 1);//BitwiseAND
          System.out.println("DEBUG: indexFor(hash=" + hash + ") = " + index);
          return index;
      }
@@ -176,4 +176,18 @@ public class HashMapProcessDebug {
 
      System.out.println("\nFinal size of map: " + map.size());
  }
+ 
+ 
+ 
+// static final int hash(Object key) {
+//	    int h;
+//	    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+//	}
+
+ 
+ 
+ 
+ 
+ 
+ 
 }
