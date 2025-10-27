@@ -17,3 +17,81 @@ for each character c:
     
 This treats the sequence like a polynomial in base 31:
 h = c0*31^(n-1) + c1*31^(n-2) + ... + cn-1
+
+
+2) Why prime (31) helps
+
+Primes reduce regular patterns: non-prime bases can cause more systematic collisions for some input patterns. Prime bases mix factors less predictably.
+
+31 is small: cheap to compute and keeps values from growing too quickly (but Java allows overflow).
+
+31 is odd: multiplying by an odd number retains more information in low-order bits. Multiplying by an even number repeatedly quickly forces zeros into lower bits.
+
+3) Why 31 = 32 - 1 is an optimization
+31 * i == (i << 5) - i because 31 = 2^5 - 1.
+
+i = 123
+31 * 123 = 3813
+(123 << 5) - 123=(123*32)-123=3936-123=3813
+Modern JVMs/JIT often optimize multiplication anyway, but the identity explains why 31 was chosen historically.
+
+abc
+'a'=97,
+'b'=98,
+'c'=99
+Compute h with h = 31*h + c
+start h=0;
+after 'a':h=31*0+97=97;
+
+after 'b':h=31*97+98=3007+98=3105;
+       Using shift form 31*97+98 = ((97 << 5) - 97)+98 = (3104 - 97)+98 = 3007+98=3105;
+       
+After 'c': h = 31*3105 + 99 = 96255 + 99 = 96354
+      Or ((3105 << 5) - 3105)+99 = (99360 - 3105)+99 = 96255 then +99 → 96354
+
+
+abc=inal hash value (before any integer overflow wrapping) is 96354.
+In Java int space will wrap if values get large — that’s fine; the wrapping still keeps a distributed result.
+
+
+
+
+Using 31 is a reasonable default — simple, fast, and produces good distributions for many inputs.
+Other primes or strategies (e.g., 5381 used in djb2) also work; 
+31 is just a pragmatic and widely adopted choice in Java.
+
+
+
+x=31 × 7=217
+
+x=(7 << 5) - 7
+
+
+7 << 5          shift left by 5 bits → same as 7 × 32             224
+
+(7 << 5) - 7    subtract original value                        224 - 7 = 217
+
+31 × 7          normal multiplication                            217
+
+(i << 5) - i works because 31 = 32 - 1.
+
+
+AB
+A=65
+B=66
+
+A h = 31×0 + 65=65
+B h=31*65+66=2081
+
+
+
+
+
+
+
+
+
+
+
+
+
