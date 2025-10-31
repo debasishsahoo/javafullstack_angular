@@ -19,6 +19,7 @@ import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class HashMapExample {
 
@@ -76,6 +77,25 @@ public class HashMapExample {
         hashtablemap.put(3,"C");
         
         System.out.println("Hashtable: " + hashtablemap);
+        
+        
+        Map<String, Integer> concurrenthashmap = new ConcurrentHashMap<>();
+
+        concurrenthashmap.put("A", 1);
+        concurrenthashmap.put("B", 2);
+        concurrenthashmap.put("C", 3);
+
+        concurrenthashmap.putIfAbsent("C", 5); // won’t override existing
+        concurrenthashmap.putIfAbsent("D", 4);
+
+        System.out.println("ConcurrentHashMap: " + concurrenthashmap);
+        
+        
+        
+        
+        
+        
+        
 		
 	}
 
