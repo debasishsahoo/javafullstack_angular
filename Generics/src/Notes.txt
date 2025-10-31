@@ -1,0 +1,12 @@
+Syntax
+
+class ClassName<T> { ... }
+    
+  T is a type parameter (can be any identifier).  
+  
+  
+  T → Type
+  E → Element
+  K → Key
+  V → Value
+  N → Number
